@@ -1,4 +1,4 @@
-from math import pi
+from math import pi, sin, cos, sqrt, log10
 
 import numpy as np
 
@@ -7,7 +7,7 @@ def do_math():
     calc_sin()
     calc_cos()
     calc_sqrt()
-    # calc_log10()
+    calc_log10()
 
 
 def calc_sin():
@@ -17,9 +17,11 @@ def calc_sin():
 
     print("Generating sin(x) for x values ranging from -2PI -> 2PI with an increment of PI/64... Done!")
 
-    values_list = np.sin(np.arange(start_value, end_value, increment))
+    f = open("sin.txt", mode='w', encoding='utf-8')
 
-    print(values_list)
+    for x in np.arange(start_value, end_value, increment):
+        x = sin(x)
+        f.write(str(x) + "\n")
 
 
 def calc_cos():
@@ -29,9 +31,11 @@ def calc_cos():
 
     print("Generating cos(x) for x values ranging from -2PI -> 2PI with an increment of PI/64... Done!")
 
-    values_list = np.cos(np.arange(start_value, end_value, increment))  # Get x values
+    f = open("cos.txt", mode='w', encoding='utf-8')
 
-    print(values_list)
+    for x in np.arange(start_value, end_value, increment):
+        x = cos(x)
+        f.write(str(x) + "\n")
 
 
 def calc_sqrt():
@@ -41,9 +45,11 @@ def calc_sqrt():
 
     print("Generating sqrt(x) for x values ranging from 0 -> 200 with an increment of 0.5... Done!")
 
-    values_list = np.sqrt(np.arange(start_value, end_value, increment))  # Get x values
+    f = open("sqrt.txt", mode='w', encoding='utf-8')
 
-    print(values_list)
+    for x in np.arange(start_value, end_value, increment):
+        x = sqrt(x)
+        f.write(str(x) + "\n")
 
 
 def calc_log10():
@@ -53,9 +59,15 @@ def calc_log10():
 
     print("Generating log10(x) for x values ranging from 0 -> 200 with an increment of 0.5... Done!")
 
-    values_list = np.log10(np.arange(start_value, end_value, increment))  # Get x values
+    f = open("log10.txt", mode='w', encoding='utf-8')
 
-    print(values_list)
+    for x in np.arange(start_value, end_value, increment):
+        try:
+            x = log10(x)
+        except (ZeroDivisionError, ValueError) as e:
+            f.write(str(e) + "\n")
+            pass
+        f.write(str(x) + "\n")
 
 
 if __name__ == "__main__":
