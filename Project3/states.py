@@ -5,7 +5,7 @@ import state_data
 
 def display_menu():
     menu_items = [
-        "[ 1 ] Display all States and their data",
+        "[ 1 ] Display all states and their data",
         "[ 2 ] Query a specific state",
         "[ 3 ] Update state data",
         "[ 4 ] Quit (Exit program)"
@@ -161,5 +161,5 @@ def exit_program():
 
 
 if __name__ == "__main__":
-    print("Welcome to this directory for State data!\n")
+    print("Welcome to this directory for state data!\n")
     display_menu()
