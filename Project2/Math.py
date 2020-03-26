@@ -9,6 +9,8 @@ def do_math():
     calc_sqrt()
     calc_log10()
 
+    print("\nResults have been printed to text files in your current directory.")
+
 
 def calc_sin():
     increment = pi / 64
@@ -71,5 +73,5 @@ def calc_log10():
 
 
 if __name__ == "__main__":
-    print("Doing math - Please wait.")
+    print("Doing math - Please wait.\n")
     do_math()
