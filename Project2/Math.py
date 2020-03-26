@@ -15,7 +15,7 @@ def calc_sin():
     start_value = -2 * pi
     end_value = 2 * pi
 
-    print("Generating sin(x) for x values ranging from -2PI -> 2PI with an increment of PI/64... Done!")
+    print("Generating x, sin(x) for x values ranging from -2PI -> 2PI with an increment of PI/64... Done!")
 
     f = open("sin.txt", mode='w', encoding='utf-8')
 
@@ -29,7 +29,7 @@ def calc_cos():
     start_value = -2 * pi
     end_value = 2 * pi
 
-    print("Generating cos(x) for x values ranging from -2PI -> 2PI with an increment of PI/64... Done!")
+    print("Generating x, cos(x) for x values ranging from -2PI -> 2PI with an increment of PI/64... Done!")
 
     f = open("cos.txt", mode='w', encoding='utf-8')
 
@@ -43,7 +43,7 @@ def calc_sqrt():
     start_value = 0
     end_value = 200
 
-    print("Generating sqrt(x) for x values ranging from 0 -> 200 with an increment of 0.5... Done!")
+    print("Generating x, sqrt(x) for x values ranging from 0 -> 200 with an increment of 0.5... Done!")
 
     f = open("sqrt.txt", mode='w', encoding='utf-8')
 
@@ -57,7 +57,7 @@ def calc_log10():
     start_value = 0
     end_value = 200
 
-    print("Generating log10(x) for x values ranging from 0 -> 200 with an increment of 0.5... Done!")
+    print("Generating x, log10(x) for x values ranging from 0 -> 200 with an increment of 0.5... Done!")
 
     f = open("log10.txt", mode='w', encoding='utf-8')
 

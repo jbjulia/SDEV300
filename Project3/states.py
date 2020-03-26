@@ -138,7 +138,7 @@ def update_state_data():
                         print("\nYou have successfully updated the state flower of", key.title(), "to: ",
                               item[2].title() + ".")
                     else:
-                        print("Sorry, that element does not exist, please try again.")
+                        print("\nSorry, that element does not exist, please try again.\n")
                         display_menu()
                 else:
                     pass
