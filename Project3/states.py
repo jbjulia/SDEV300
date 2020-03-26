@@ -123,22 +123,20 @@ def update_state_data():
                     if element == "capitol":
                         item[0] = input(
                             "\nPlease enter a new state capitol: ")  # TODO: Function to make changes permanent
-                        print(item[0])
                         print("\nYou have successfully updated the state capitol of", key.title(), "to: ",
                               item[0].title())
                     elif element == "bird":
                         item[1] = input(
                             "\nPlease enter a new state bird: ")  # TODO: Function to make changes permanent
-                        print(item[1])
-                        print("\nYou have successfully updated the state bird of", key.title(), "to: ", item[1].title())
+                        print("\nYou have successfully updated the state bird of", key.title(), "to: ",
+                              item[1].title())
                     elif element == "flower":
                         item[2] = input(
                             "\nPlease enter a new state flower: ")  # TODO: Function to make changes permanent
-                        print(item[2])
                         print("\nYou have successfully updated the state flower of", key.title(), "to: ",
                               item[2].title())
                     else:
-                        print("Sorry, that element does not exits, please try again.")
+                        print("Sorry, that element does not exist, please try again.")
                         display_menu()
                 else:
                     pass
