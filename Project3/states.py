@@ -11,10 +11,12 @@ def display_menu():
         "[ 4 ] Quit (Exit program)"
     ]
 
+    print("Please make a selection from the following menu:\n")
+
     for item in menu_items:
         print(item)  # Print selection menu
 
-    selection = int(input())  # Get user's selection
+    selection = int(input("\n"))  # Get user's selection
 
     try:
         if selection == 1:
@@ -26,9 +28,9 @@ def display_menu():
         elif selection == 4:
             exit_program()
         else:
-            print("\nSorry, please try again.")
+            print("\nSorry, please try again.\n\n")
     except ValueError:
-        print("\nPlease select an option from the menu by typing either '1', '2', 3' or '4'.")
+        print("\nPlease select an option from the menu by typing either '1', '2', 3' or '4'.\n\n")
         display_menu()  # Display selection menu
 
 
@@ -55,7 +57,7 @@ def display_all_state_data():
         print("\nError: Could not import state data.")
         sys.exit()  # Exit program
 
-    input("\nPress any key to return to the selection menu...")  # Wait for user input
+    input("\nPress any key to return to the selection menu...\n\n")  # Wait for user input
 
     display_menu()  # Display selection menu
 
@@ -90,9 +92,9 @@ def query_specific_state():
         sys.exit()
 
     if not state_found:
-        print("\nSorry, that state could not be found.")
+        print("\nSorry, that state could not be found.\n")
 
-    input("\nPress any key to return to the selection menu...")
+    input("\nPress any key to return to the selection menu...\n\n")
 
     display_menu()
 
@@ -124,17 +126,17 @@ def update_state_data():
                         item[0] = input(
                             "\nPlease enter a new state capitol: ")  # TODO: Function to make changes permanent
                         print("\nYou have successfully updated the state capitol of", key.title(), "to: ",
-                              item[0].title())
+                              item[0].title() + ".")
                     elif element == "bird":
                         item[1] = input(
                             "\nPlease enter a new state bird: ")  # TODO: Function to make changes permanent
                         print("\nYou have successfully updated the state bird of", key.title(), "to: ",
-                              item[1].title())
+                              item[1].title() + ".")
                     elif element == "flower":
                         item[2] = input(
                             "\nPlease enter a new state flower: ")  # TODO: Function to make changes permanent
                         print("\nYou have successfully updated the state flower of", key.title(), "to: ",
-                              item[2].title())
+                              item[2].title() + ".")
                     else:
                         print("Sorry, that element does not exist, please try again.")
                         display_menu()
@@ -145,9 +147,9 @@ def update_state_data():
         sys.exit()
 
     if not state_found:
-        print("\nSorry, that state could not be found.")
+        print("\nSorry, that state could not be found.\n")
 
-    input("\nPress any key to return to the selection menu...")
+    input("\nPress any key to return to the selection menu...\n\n")
 
     display_menu()
 
@@ -159,5 +161,5 @@ def exit_program():
 
 
 if __name__ == "__main__":
-    print("Welcome to this directory for State data!\n\n")
+    print("Welcome to this directory for State data!\n")
     display_menu()
