@@ -74,7 +74,8 @@ def calc_log10():
         except (ZeroDivisionError, ValueError) as e:
             f.write(str(e) + "\n")  # Record error message and pass
             pass
-        f.write(str(x) + "\n")  # Write column of log10(x) values
+        finally:
+            f.write(str(x) + "\n")  # Write column of log10(x) values
 
 
 def display_results():
@@ -89,19 +90,19 @@ def display_results():
         cos_values = open("cos.txt", mode='r', encoding='utf-8')
         sqrt_values = open("sqrt.txt", mode='r', encoding='utf-8')
         log10_values = open("log10.txt", mode='r', encoding='utf-8')
-    except ImportError:
+    except (FileNotFoundError, ImportError):
         x = x + 1  # Record number of errors encountered
         pass
-
-    print("\nSin(x) Values:\n",
-          sin_values.read(),  # Print values to terminal
-          "\nCos(x) Values:\n",
-          cos_values.read(),
-          "\nSqrt(x) Values:\n",
-          sqrt_values.read(),
-          "\nLog10(x) Values:\n",
-          log10_values.read(),
-          "\nGoodbye!")
+    finally:
+        print("\nSin(x) Values:\n",
+              sin_values.read(),  # Print values to terminal
+              "\nCos(x) Values:\n",
+              cos_values.read(),
+              "\nSqrt(x) Values:\n",
+              sqrt_values.read(),
+              "\nLog10(x) Values:\n",
+              log10_values.read(),
+              "\nGoodbye!")
 
     if x > 0:
         print("\nError: ", x, "file(s) could not be opened.")  # Print number of errors if any occurred
