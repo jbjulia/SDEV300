@@ -14,7 +14,7 @@ def do_math():
     if input("Would you like to see these results in the terminal? (Y / N): ").lower() == "y":
         display_results()  # Print results to terminal
     else:
-        print("Goodbye!")
+        print("\nGoodbye!")
 
 
 def calc_sin():
