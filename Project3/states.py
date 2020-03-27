@@ -1,14 +1,25 @@
 import json
 import sys
 
+import state_data
+
+
+def check_json():
+    try:
+        open('state_data.json', 'r')  # Attempt to open json file
+    except (FileNotFoundError, ValueError):
+        restore_directory()  # Restore directory if file could not be opened
+    finally:
+        display_menu()  # Display selection menu
+
 
 def display_menu():
     menu_items = [
         "[ 1 ] Display all states and their data",
         "[ 2 ] Query a specific state",
         "[ 3 ] Update state data",
-        "[ 4 ] Restore directory (clear changes)"
-        "[ 4 ] Quit (Exit program)"
+        "[ 4 ] Restore directory (clear changes)",
+        "[ 5 ] Quit (Exit program)"
     ]
 
     print("Please make a selection from the following menu:\n")
@@ -32,7 +43,7 @@ def display_menu():
         else:
             print("\nSorry, please try again.\n\n")
     except ValueError:
-        print("\nPlease select an option from the menu by typing either '1', '2', 3' or '4'.\n\n")
+        print("\nPlease select an option from the menu by typing either '1', '2', 3', '4' or '5'.\n\n")
         display_menu()  # Display selection menu
 
 
@@ -175,8 +186,16 @@ def update_json():
 
 
 def restore_directory():
-    #  TODO: Function to restore default directory of state data
-    return
+    data = state_data.dir_backup  # Import backup directory from state_data.py
+
+    try:
+        with open("state_data.json", "w") as out_file:
+            json.dump(data, out_file, indent=4, sort_keys=True)  # Restore default state directory
+    except FileNotFoundError:
+        print("Error: Unable to recovery state directory.")
+    finally:
+        print("\nState directory successfully restored!\n")
+        display_menu()  # Return to selection menu
 
 
 def exit_program():
@@ -187,4 +206,5 @@ def exit_program():
 
 if __name__ == "__main__":
     print("Welcome to this directory for state data!\n")
+    check_json()
     display_menu()
