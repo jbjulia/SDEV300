@@ -19,24 +19,28 @@ def display_menu():
 
 def get_user_selection():
     lottery_number = 0
-    selection = input()  # User input
+    selection = input("\n")  # User input
 
     while selection.lower() != "x":
         if selection == "1":
-            print("Generating 3-digit lottery number...")
+            print("\nGenerating 3-digit lottery number...")
             lottery_number = pull_lever(3)  # Generate random 3-digit lottery number
         elif selection == "2":
-            print("Generating 4-digit lottery number...")
+            print("\nGenerating 4-digit lottery number...")
             lottery_number = pull_lever(4)  # Generate random 4-digit lottery number
         else:
-            print("Please make a selection from the following menu by entering '1' or '2' in your terminal.")
+            print("\nPlease make a selection from the following menu by entering '1' or '2' in your terminal.\n")
             display_menu()  # Return to selection menu
 
-        print("Your random", selection, "-digit lottery number is", lottery_number)  # Print random lottery number
+        print("\nYour random",
+              len(str(lottery_number)),  # Get length of lottery number
+              "-digit lottery number is: ",
+              lottery_number,
+              "\n")  # Print random lottery number
 
         display_menu()  # Return to selection menu
 
-    exit_game()
+    exit_game()  # Exit game
 
 
 def pull_lever(digits):
@@ -47,7 +51,7 @@ def pull_lever(digits):
 
 
 def exit_game():
-    print("Thank for playing, and always gamble responsibly! Goodbye!")
+    print("\nThank for playing, and always gamble responsibly! Goodbye!")
 
     sys.exit()  # Exit application
 
