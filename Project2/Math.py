@@ -85,10 +85,10 @@ def display_results():
     log10_values = ""
 
     try:
-        sin_values = open("sin.txt", mode='r')  # Open text files and read in data
-        cos_values = open("cos.txt", mode='r')
-        sqrt_values = open("sqrt.txt", mode='r')
-        log10_values = open("log10.txt", mode='r')
+        sin_values = open("sin.txt", mode='r', encoding='utf-8')  # Open text files and read in data
+        cos_values = open("cos.txt", mode='r', encoding='utf-8')
+        sqrt_values = open("sqrt.txt", mode='r', encoding='utf-8')
+        log10_values = open("log10.txt", mode='r', encoding='utf-8')
     except ImportError:
         x = x + 1  # Record number of errors encountered
         pass
