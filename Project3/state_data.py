@@ -23,7 +23,7 @@ states = [
     {"massachusetts": ["boston", "black-capped chickadee", "mayflower"]},
     {"michigan": ["lansing", "american robin", "apple blossom"]},
     {"minnesota": ["saint paul", "common loon", "pink and white lady slipper"]},
-    {"mississippi": ["jackson", "norther mockingbird", "magnolia"]},
+    {"mississippi": ["jackson", "northern mockingbird", "magnolia"]},
     {"missouri": ["jefferson", "eastern bluebird", "hawthorn"]},
     {"montana": ["helena", "western meadowlark", "bitter root"]},
     {"nebraska": ["lincoln", "western meadowlark", "goldenrod"]},
