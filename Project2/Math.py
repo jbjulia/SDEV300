@@ -12,7 +12,7 @@ def do_math():
     print("\nResults have been printed to text files (.txt) in your current directory.\n")
 
     if input("Would you like to see these results in the terminal? (Y / N): ").lower() == "y":
-        display_results()
+        display_results()  # Print results to terminal
     else:
         print("Goodbye!")
 
