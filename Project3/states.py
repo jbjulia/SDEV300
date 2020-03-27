@@ -192,7 +192,7 @@ def restore_directory():
         with open("state_data.json", "w") as out_file:
             json.dump(data, out_file, indent=4, sort_keys=True)  # Restore default state directory
     except FileNotFoundError:
-        print("Error: Unable to recovery state directory.")
+        print("Error: Unable to recover state directory.")
     finally:
         print("\nState directory successfully restored!\n")
         display_menu()  # Return to selection menu
