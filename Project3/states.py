@@ -27,9 +27,9 @@ def display_menu():
     for item in menu_items:
         print(item)  # Print selection menu
 
-    selection = int(input("\n"))  # Get user's selection
-
     try:
+        selection = int(input("\n"))  # Get user's selection
+
         if selection == 1:
             display_all_state_data()
         elif selection == 2:
