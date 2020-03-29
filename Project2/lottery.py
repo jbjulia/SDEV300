@@ -29,7 +29,7 @@ def get_user_selection():
             print("\nGenerating 4-digit lottery number...")
             lottery_number = pull_lever(4)  # Generate random 4-digit lottery number
         else:
-            print("\nPlease make a selection from the following menu by entering '1' or '2' in your terminal.\n")
+            print("\nPlease make a selection from the following menu by entering '1', '2' or 'x' in your terminal.\n")
             display_menu()  # Return to selection menu
 
         print("\nYour random",
