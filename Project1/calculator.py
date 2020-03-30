@@ -97,7 +97,7 @@ def run_operation(selection, integers_list):
             print("\n\n", "Sorry, this application has experienced an error.")
             sys.exit()  # Quit application
     except ZeroDivisionError as e:
-        print(str(e) + "<-- We caught this error!")  # Now we can print a helpful message to guide the user.
+        print(str(e) + "<-- We caught this error!")  # Now we can print a helpful message to guide the user
         print("\nYou will be returned to the menu to try again.\n")  # <-- Helpful message
         display_menu()  # Return to selection menu
 
