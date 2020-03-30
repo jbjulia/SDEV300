@@ -60,6 +60,9 @@ def run_operation(selection, integers_list):
     x = integers_list[0]
     y = integers_list[1]
 
+    # Corrected in Week 3 Discussion by implementing a try/except statement to handle ZeroDivisionError
+
+    """
     if selection == "1":
         print("\n\n", x, "plus", y, "equals", x + y)  # Add x and y
     elif selection == "2":
@@ -77,10 +80,28 @@ def run_operation(selection, integers_list):
     else:
         print("\n\n", "Sorry, this application has experienced an error.")
         sys.exit()  # Quit application
+    """
 
-    display_menu()  # Return to selection menu
+    try:
+        if selection == "1":
+            print("\n\n", x, "plus", y, "equals", x + y)  # Add x and y
+        elif selection == "2":
+            print("\n\n", x, "minus", y, "equals", x - y)  # Subtract x and y
+        elif selection == "3":
+            print("\n\n", x, "multiplied by", y, "equals", x * y)  # Multiply x and y
+        elif selection == "4":
+            print("\n\n", x, "divided by", y, "equals", x / y)  # Divide x and y
+        elif selection == "5":
+            print("\n\n", x, "modulus", y, "equals", x % y)  # Modulus x and y
+        else:
+            print("\n\n", "Sorry, this application has experienced an error.")
+            sys.exit()  # Quit application
+    except ZeroDivisionError as e:
+        print(str(e) + "<-- We caught this error!")  # Now we can print a helpful message to guide the user.
+        print("\nYou will be returned to the menu to try again.\n")  # <-- Helpful message
+        display_menu()  # Return to selection menu
 
-    # TODO: Error handling for mathematical operations and non-compliant user input
+    # TODO: Error handling for mathematical operations and non-compliant user input (COMPLETED)
 
 
 if __name__ == "__main__":
