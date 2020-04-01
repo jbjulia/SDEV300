@@ -45,8 +45,7 @@ def display_menu():
             except ValueError:
                 print("\nPlease enter a valid integer.")
                 display_menu()
-            finally:
-                square_cubed_sets(integer)
+            square_cubed_sets(integer)
         elif selection == 3:
             find_union()
         elif selection == 4:
