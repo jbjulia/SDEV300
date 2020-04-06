@@ -68,12 +68,12 @@ def build_matrices():
               )
 
         for i in range(rows):
-            matrices[0].append(list(map(int, input().rstrip().split())))  # Build first matrix
+            matrices[0].append(list(map(float, input().rstrip().split())))  # Build first matrix
 
         print("\nPlease enter your second %s x %s matrix: " % (rows, columns))
 
         for i in range(rows):
-            matrices[1].append(list(map(int, input().rstrip().split())))  # Build second matrix
+            matrices[1].append(list(map(float, input().rstrip().split())))  # Build second matrix
     except (KeyboardInterrupt, ValueError):
         errors = True
         pass
