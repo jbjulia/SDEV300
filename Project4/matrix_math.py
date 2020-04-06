@@ -41,7 +41,7 @@ def display_menu():
                 elif selection == 4:
                     multiply_matrix_elements(matrices)  # Multiply matrix elements
                 elif selection == 5:
-                    start_over(matrices)  # Clear matrices and start over
+                    start_over()  # Clear matrices and start over
                 elif selection == 6:
                     quit_app()  # Exit application
                 else:
@@ -149,7 +149,7 @@ def find_mean(matrix):
           column_mean)
 
 
-def start_over(matrices):
+def start_over():
     print("\nYour matrices have been cleared!\n")
 
     display_menu()  # Return to selection menu
