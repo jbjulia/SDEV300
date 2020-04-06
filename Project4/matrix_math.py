@@ -15,8 +15,6 @@ def display_menu():
         6: "\tQuit (Exit application)"
     }
 
-    options = menu_items.keys()  # Build menu options
-
     try:
         if input("Would you like to play? [ Y / N ]\t").lower() == "y":
             matrices = build_matrices()  # Get user input to build matrices
@@ -27,7 +25,7 @@ def display_menu():
                 print("\nSecond Matrix:\n", *matrices[1], sep="\n")
                 print("\n--------------------\n")
 
-                for item in options:
+                for item in menu_items.keys():
                     print(item, menu_items[item])  # Print selection menu
 
                 selection = int(input("\nPlease make a selection from the menu above: "))  # Get user input
@@ -48,8 +46,10 @@ def display_menu():
                     print("\nUh-oh, please try again.")
         else:
             print("\nGoodbye!\n")
-    except ValueError:
+    except (KeyboardInterrupt, ValueError):
         print("\nError, please try again.\n")
+
+        sys.exit()  # Quit application
 
 
 def build_matrices():
@@ -80,7 +80,8 @@ def build_matrices():
     finally:
         if errors:
             print("An error occurred, please try again.")
-            sys.exit()
+
+            sys.exit()  # Quit application
 
     np_matrix = np.array([matrices[0], matrices[1]])  # Create numpy array from matrices
 
@@ -140,8 +141,8 @@ def transpose_matrix(matrix):
 
 
 def find_mean(matrix):
-    row_mean = matrix.mean(axis=1)
-    column_mean = matrix.mean(axis=0)
+    row_mean = matrix.mean(axis=1)  # Calculate mean of matrix rows
+    column_mean = matrix.mean(axis=0)  # Calculate mean of matrix columns
 
     print("\nRow Mean Values:\t",
           row_mean,
