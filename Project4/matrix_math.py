@@ -48,7 +48,7 @@ def display_menu():
             print("\nGoodbye!\n")
     except (KeyboardInterrupt, ValueError):
         print("\nError, please try again.\n")
-
+    finally:
         sys.exit()  # Quit application
 
 
@@ -60,8 +60,9 @@ def build_matrices():
 
     try:
         print("\nPlease enter your first %s x %s matrix: " % (rows, columns),
-              "\n\n\t*Separate your elements by hitting SPACE.",
-              "\n\t*Hit ENTER to move to the next row.",
+              "\n\n\t* Please use either floats or integers.",
+              "\n\t* Separate your elements by hitting SPACE.",
+              "\n\t* Hit ENTER to move to the next row.",
               "\n\n\tExample:\t1\t2\t3",
               "\n\t\t\t\t4\t5\t6",
               "\n\t\t\t\t7\t8\t9\n",
