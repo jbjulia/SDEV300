@@ -65,7 +65,7 @@ def build_matrices():
               "\n\t* Hit ENTER to move to the next row.",
               "\n\n\tExample:\t1\t2\t3",
               "\n\t\t\t\t4\t5\t6",
-              "\n\t\t\t\t7\t8\t9\n",
+              "\n\t\t\t\t7\t8\t9\n"
               )
 
         for i in range(rows):
@@ -94,7 +94,8 @@ def add_matrices(matrices):
 
     print("\nMatrices Added:\n",
           *added_matrix,
-          sep="\n")  # Add matrices and pretty-print new matrix
+          sep="\n"
+          )  # Add matrices and pretty-print new matrix
 
     transpose_matrix(added_matrix)  # Find transpose of matrix
     find_mean(added_matrix)  # Find mean of matrix rows/columns
@@ -105,7 +106,8 @@ def subtract_matrices(matrices):
 
     print("\nMatrices Subtracted:\n",
           *subtracted_matrix,
-          sep="\n")  # Subtract matrices and pretty-print new matrix
+          sep="\n"
+          )  # Subtract matrices and pretty-print new matrix
 
     transpose_matrix(subtracted_matrix)  # Find transpose of matrix
     find_mean(subtracted_matrix)  # Find mean of matrix rows/columns
@@ -116,7 +118,8 @@ def multiply_matrices(matrices):
 
     print("\nMatrices Multiplied:\n",
           *multiplied_matrix,
-          sep="\n")  # Multiply matrices and pretty-print new matrix
+          sep="\n"
+          )  # Multiply matrices and pretty-print new matrix
 
     transpose_matrix(multiplied_matrix)  # Find transpose of matrix
     find_mean(multiplied_matrix)  # Find mean of matrix rows/columns
@@ -127,7 +130,8 @@ def multiply_matrix_elements(matrices):
 
     print("\nMatrices Multiplied by Elements:\n",
           *multiplied_matrix,
-          sep="\n")  # Multiply matrix elements and pretty-print new matrix
+          sep="\n"
+          )  # Multiply matrix elements and pretty-print new matrix
 
     transpose_matrix(multiplied_matrix)  # Find transpose of matrix
     find_mean(multiplied_matrix)  # Find mean of matrix rows/columns
@@ -138,7 +142,8 @@ def transpose_matrix(matrix):
 
     print("\nMatrix Transpose:\n",
           *matrix_transpose,
-          sep="\n")  # Transpose added_matrix and pretty-print new matrix
+          sep="\n"
+          )  # Transpose added_matrix and pretty-print new matrix
 
 
 def find_mean(matrix):
@@ -148,7 +153,8 @@ def find_mean(matrix):
     print("\nRow Mean Values:\t",
           row_mean,
           "\nColumn Mean Values:\t",
-          column_mean)
+          column_mean
+          )
 
 
 def start_over():
