@@ -9,6 +9,11 @@ POP_CHANGE = "PopChange.csv"
 
 
 def main_menu():
+    """
+    Displays a selection menu inside the terminal, allowing the user to
+    choose from (2) different data files (.csv) to ingest and analyze.
+    :return:
+    """
     menu_items = {
         1: "Population Data",
         2: "Housing Data",
@@ -34,6 +39,11 @@ def main_menu():
 
 
 def ingest_csv(file):
+    """
+    Reads in file (.csv) and pass data to the corresponding class.
+    :param file:
+    :return:
+    """
     data_frame = pd.read_csv(file)  # Read in csv file
 
     if file == POP_CHANGE:
@@ -42,19 +52,25 @@ def ingest_csv(file):
         Housing(data_frame)
 
 
-def generate_histogram(data):
-    np.random.seed(214801)
-
-    mu, sigma = 100, 15
+def generate_histogram(data, title):
+    """
+    Generates a standard histogram using data passed from either class
+    and saves file (.svg) to current directory.
+    :param data:
+    :param title:
+    :return:
+    """
+    mu = data.mean()  # Mean of data
+    sigma = data.std()  # Standard Deviation of data
     x = mu + sigma * np.random.randn(10000)
 
-    n, bins, patches = plt.hist(x, 20, density=True, facecolor="b", alpha=0.75)
-
+    plt.hist(x, bins='auto')
     plt.grid(True)
-    fig1 = plt
-    fig1.savefig("PopChangeHistogram.svg")
 
-    main_menu()
+    plt.title(title)
+
+    plt.show()
+    plt.savefig("{}{}".format(title, ".svg"))
 
 
 class PopChange:
@@ -64,12 +80,16 @@ class PopChange:
         self.display_menu()  # Display selection menu
 
     def display_menu(self):
+        """
+        Displays a selection menu inside the terminal that allows the
+        user to select a column from the ingested data file to analyze.
+        :return:
+        """
         menu_items = {
             1: "Pop Apr 1",
             2: "Pop Jul 1",
             3: "Change Pop",
-            4: "Generate Histogram",
-            5: "Return to Menu",
+            4: "Return to Menu"
         }
 
         for item in menu_items.keys():
@@ -77,7 +97,6 @@ class PopChange:
 
         try:
             selection = int(input("\nSelect a column you wish to analyze:\t"))  # Get user input
-
             if selection == 1:
                 self.analyze(self.data_frame[menu_items[1]])  # Analyze data by passing column
             elif selection == 2:
@@ -85,26 +104,42 @@ class PopChange:
             elif selection == 3:
                 self.analyze(self.data_frame[menu_items[3]])
             elif selection == 4:
-                generate_histogram(self.data_frame)
-            elif selection == 5:
                 main_menu()  # Return to main menu
         except ValueError:
             print("\nError, your selection was invalid. Please try again.\n")
             self.display_menu()  # Return to selection menu
 
     def analyze(self, data):
+        """
+        Creates a dictionary from the analysis conducted on the data
+        passed, then prints values and prompts for optional histogram.
+        :param data:
+        :return:
+        """
         pop_dict = {
-            "Count:": data.count(),
-            "Mean:": data.mean(),
-            "Std Deviation:": data.std(),
-            "Min:": data.min(),
-            "Max:": data.max()
+            "\tCount:": data.count(),
+            "\tMean:": data.mean(),
+            "\tStd Deviation:": data.std(),
+            "\tMin:": data.min(),
+            "\tMax:": data.max()
         }
+
+        print("\n", "-" * 30)
 
         for item in pop_dict.keys():
             print(item, "{:10.2F}".format(pop_dict[item]))  # Print data analysis dictionary
 
-        self.display_menu()
+        print("-" * 30, "\n")
+
+        try:
+            if input("\nWould you like to generate a histogram? [Y / N]\t").lower() == "y":
+                generate_histogram(data, "PopChangeHistogram")
+                print("\nSuccess! Your histogram has been saved to this directory.\n")
+        except ValueError:
+            print("\nSorry, please try again.\n")
+        finally:
+            print("\n")
+            self.display_menu()
 
 
 class Housing:
@@ -114,14 +149,18 @@ class Housing:
         self.display_menu()  # Display selection menu
 
     def display_menu(self):
+        """
+        Displays a selection menu inside the terminal that allows the
+        user to select a column from the ingested data file to analyze.
+        :return:
+        """
         menu_items = {
             1: "Age of House",
             2: "Number of Bedrooms",
             3: "Year Built",
             4: "Number of Rooms",
             5: "Utility",
-            6: "Generate Histogram",
-            7: "Return to Menu",
+            6: "Return to Menu",
         }
 
         for item in menu_items.keys():
@@ -141,26 +180,42 @@ class Housing:
             elif selection == 5:
                 self.analyze(self.data_frame["UTILITY"])
             elif selection == 6:
-                generate_histogram(self.data_frame)
-            elif selection == 7:
                 main_menu()  # Return to main menu
         except ValueError:
             print("\nError, your selection was invalid. Please try again.\n")
             self.display_menu()  # Return to selection menu
 
     def analyze(self, data):
+        """
+        Creates a dictionary from the analysis conducted on the data
+        passed, then prints values and prompts for optional histogram.
+        :param data:
+        :return:
+        """
         housing_dict = {
-            "Count:": data.count(),
-            "Mean:": data.mean(),
-            "Std Deviation:": data.std(),
-            "Min:": data.min(),
-            "Max:": data.max()
+            "\tCount:": data.count(),
+            "\tMean:": data.mean(),
+            "\tStd Deviation:": data.std(),
+            "\tMin:": data.min(),
+            "\tMax:": data.max()
         }
+
+        print("\n", "-" * 30)
 
         for item in housing_dict.keys():
             print(item, "{:10.2F}".format(housing_dict[item]))  # Print data analysis dictionary
 
-        self.display_menu()
+        print("-" * 30, "\n")
+
+        try:
+            if input("\nWould you like to generate a histogram? [Y / N]\t").lower() == "y":
+                generate_histogram(data, "HousingHistogram")
+                print("\nSuccess! Your histogram has been saved to this directory.\n")
+        except ValueError:
+            print("\nSorry, please try again.\n")
+        finally:
+            print("\n")
+            self.display_menu()
 
 
 if __name__ == "__main__":
