@@ -69,8 +69,9 @@ def generate_histogram(data, title):
 
     plt.title(title)
 
-    plt.show()
     plt.savefig("{}{}".format(title, ".svg"))
+
+    plt.show()
 
 
 class PopChange:
