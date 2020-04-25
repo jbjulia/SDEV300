@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>PyKids</title>
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="home-hero">
+    <div class="container">
+        <h1><strong>PyKids</strong></h1>
+        <h3><strong>An interactive learning environment for Python</strong></h3>
+        <h2><strong>Coming Soon!</strong></h2>
+        {% for x in content %}
+        <h3>Today's Date: {{ x }}</h3>
+        {% endfor %}
+        <!--<a class="button" href="">Play Now</a>-->
+        <!--<a class="button" href="">Register</a>-->
+    </div>
+</section>
+<section class="home-about">
+    <div class="home-about-text-box">
+        <h2>Import the Future</h2>
+        <p>
+            Automation is inevitable, but who will lead the charge? Our future generation is ready, and the moment to
+            act is now. Programming is not reserved for the super-intelligent. Python is for everyone. Learn it today.
+        </p>
+    </div>
+</section>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="https://github.com/jbjulia/PyKids">source</a></li>
+            <li><a href="https://github.com/jbjulia/PyKids/issues">issues</a></li>
+            <li><a href="https://paypal.me/jbjulian">donate</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+</html>
