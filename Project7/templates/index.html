@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>PyKids</title>
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="home-hero">
+    <div class="container">
+        <h1><strong>PyKids</strong></h1>
+        <h3><strong>An interactive learning environment for Python</strong></h3>
+        <h2><strong>Coming Soon!</strong></h2>
+        {% for x in content %}
+        <h3>Today's Date: {{ x }}</h3>
+        {% endfor %}
+    </div>
+</section>
+<section class="home-about">
+    <!--
+    <div class="table">
+        <select name="type">
+            <option value="june">June</option>
+            <option value="july">July</option>
+            <option value="august">August</option>
+        </select>
+    </div>
+    -->
+    <div>
+        <table border="3">
+            <tr>
+                <th colspan="3">
+                    Class Dates
+                </th>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <th>End</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>June 1st</td>
+                <td>June 14th</td>
+                <td>Lincoln Minster Prep School Computer Lab</td>
+            </tr>
+            <tr>
+                <td>July 1st</td>
+                <td>July 14th</td>
+                <td>RAF Alconbury Computer Lab</td>
+            </tr>
+            <tr>
+                <td>August 1st</td>
+                <td>August 14th</td>
+                <td>Online Only</td>
+            </tr>
+        </table>
+    </div>
+    <div class="home-about-text-box">
+        <h2>Import the Future</h2>
+        <p>
+            Automation is inevitable, but who will lead the charge? Our future generation is ready, and the moment to
+            act is now. Programming is not reserved for the super-intelligent. Python is for everyone. Learn it today.
+        </p>
+    </div>
+    <div class="home-pictures">
+        <img alt="" src="../static/images/pic1.jpg">
+        <img alt="" src="../static/images/pic2.jpg">
+        <img alt="" src="../static/images/pic3.jpg">
+        <img alt="" src="../static/images/pic4.jpg">
+    </div>
+</section>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="https://github.com/jbjulia/PyKids">source</a></li>
+            <li><a href="https://github.com/jbjulia/PyKids/issues">issues</a></li>
+            <li><a href="https://paypal.me/jbjulian">donate</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+</html>
