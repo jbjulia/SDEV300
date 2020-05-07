@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>Login</title>
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="../static/fonts/ionicons.min.css" rel="stylesheet">
+    <link href="../static/css/styles.min.css" rel="stylesheet">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <span>{{ message }}</span>
+        <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</head>
+
+<body>
+<div class="login-clean" style="font-family: Quicksand, sans-serif;">
+    <h1 class="text-center" style="font-family: Quicksand, sans-serif;color: #2d3436;">Password Login Form</h1>
+    <form method="post">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline" style="color: #0984e3;"></i></div>
+        <div class="form-group"><input class="form-control" name="email" placeholder="Email" type="email"></div>
+        <div class="form-group"><input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" style="background-color: #0984e3;" type="submit">Log In</button>
+        </div>
+        <a class="forgot" href="password-reset">Forgot your email or password?</a></form>
+</div>
+<div class="footer-basic" style="font-family: Quicksand, sans-serif;">
+    <footer>
+        <div class="social"><a data-bs-tooltip="" data-toggle="tooltip" href="https://github.com/jbjulia"
+                               title="View source code"><i class="icon ion-social-github"></i></a></div>
+        <p class="copyright">Created by Joseph Julian © 2020</p>
+    </footer>
+</div>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/js/script.min.js"></script>
+</body>
+
+</html>
