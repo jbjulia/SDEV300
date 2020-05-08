@@ -464,30 +464,6 @@
     "speedy",
     "buffalo"
   ],
-  "LOGS": [
-    "Failed login attempt from 127.0.0.1 at 2020-05-07 23:01:40.",
-    "Failed login attempt from 127.0.0.1 at 2020-05-07 23:01:45.",
-    "Failed login attempt from 127.0.0.1 at 2020-05-07 23:40:47.",
-    "Failed login attempt from 127.0.0.1 at 2020-05-07 23:40:51."
-  ],
-  "USERS": [
-    {
-      "joseph.b.julian@gmail.com": {
-        "EMAIL": "joseph.b.julian@gmail.com",
-        "ID": 1,
-        "KEY": "9WQ49Lpv8AiHNOsUY5U1bHCMIf5OxRgdqjn0yLrEP4U=",
-        "PASSWORD": "gAAAAABetIQVgHyP5z_K_iHMBDSeUs41FaD2EqrAWK4doAVZqgXWR-SNAqo62cCO4Zt-i-jzCLnkZS8rvU9uqG7TqZi-NjHc6A==",
-        "USERNAME": "Joseph"
-      }
-    },
-    {
-      "autumn.m.julian@gmail.com": {
-        "EMAIL": "autumn.m.julian@gmail.com",
-        "ID": 2,
-        "KEY": "rsrSViL2sA_X0VQYJ5JxibQEf54F4Y63NZp2Dl2tvqI=",
-        "PASSWORD": "gAAAAABetII6xOq6xSiRxDdeTp-q5CDyN2-Jrm-znIRu4W0jvan12OUgt1to-pQuvFiZXXP1X40kGvmev4-1DJ_nDSHB0Fif8A==",
-        "USERNAME": "Autumn"
-      }
-    }
-  ]
+  "LOGS": [],
+  "USERS": []
 }
