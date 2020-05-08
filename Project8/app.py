@@ -79,7 +79,7 @@ def splash():
 @app.route("/admin")
 def admin():
     """
-    Redirect to Login page
+    Redirects to Login page
     :return: Login page
     """
     return redirect((url_for("login")))
@@ -194,7 +194,7 @@ def check_logs(ip_addr):
                     ip_found = True
                     if int(time.replace(":", "")) - int(log[ip]["TIME"].replace(":", "")) > 300:
                         acc_locked = False
-                        log[ip].update(ATTEMPT=1, DATE=date, TIME=time, NOTE="")
+                        log[ip].update(ATTEMPT=1, DATE=date, TIME=time, FLAGS="")
                     else:
                         log[ip]["ATTEMPT"] += 1
                         log[ip].update(DATE=date, TIME=time)
